@@ -7,12 +7,14 @@ public class User {
     private String name;
     private String description;
     private String avatar;
+    private boolean suspended;
 
     public User(UUID id, String name, String description, String avatar) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.avatar = avatar;
+        this.suspended = false;
     }
 
     public UUID getId() {
@@ -45,5 +47,16 @@ public class User {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public boolean isSuspended() {
+        return this.suspended;
+    }
+    public void setSuspended(boolean suspended) {
+        this.suspended = suspended;
+    }
+
+    public void suspend() {
+        this.suspended = true;
     }
 }
